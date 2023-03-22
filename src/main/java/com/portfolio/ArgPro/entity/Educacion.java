@@ -19,18 +19,19 @@ import lombok.Setter;
  *
  * @author aquil
  */
+
 @Entity
-public class Experiencia {
+public class Educacion {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Getter @Setter
     private long id;
     
     @Getter @Setter
-    private String nombre_empresa;
+    private String nombre_institucion;
     
     @Getter @Setter
-    private String cargo;
+    private String titulo;
     
     @Temporal(TemporalType.DATE)
     @Getter @Setter
@@ -46,5 +47,4 @@ public class Experiencia {
     
     @Getter @Setter
     private String imagen;
-    
 }

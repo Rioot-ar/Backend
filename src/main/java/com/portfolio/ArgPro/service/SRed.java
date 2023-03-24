@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Red;
 import com.portfolio.ArgPro.repository.RRed;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,11 @@ public class SRed implements ISRed{
     @Override
     public void deleteRed(long id) {
         rred.deleteById(id);
+    }
+
+    @Override
+    public List<Red> findAllRed() {
+        return rred.findAll();
     }
     
 }

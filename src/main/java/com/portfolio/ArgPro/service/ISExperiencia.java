@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Experiencia;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public interface ISExperiencia {
     public void saveExperiencia(Experiencia exp);
     public Experiencia findExperiencia(long id);
     public void deleteExperiencia(long id);
+    public List<Experiencia> findAllExperiencia();
 }

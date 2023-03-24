@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.controller;
 
 import com.portfolio.ArgPro.entity.Habilidad;
 import com.portfolio.ArgPro.service.ISHabilidad;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,11 @@ public class CHabilidad {
     @GetMapping("{id}")
     public Habilidad obHabilidad(@PathVariable long id){
         return iHabilidad.findHabilidad(id);
+    }
+    
+    @GetMapping("traer")
+    public List<Habilidad> obHabilidades(){
+        return iHabilidad.findAllHabilidad();
     }
     
     @PostMapping("crear")

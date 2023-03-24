@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.controller;
 
 import com.portfolio.ArgPro.entity.Proyecto;
 import com.portfolio.ArgPro.service.ISProyecto;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,11 @@ public class CProyecto {
     @GetMapping("{id}")
     public Proyecto obProyecto(@PathVariable long id){
         return iProyecto.findProyecto(id);
+    }
+    
+    @GetMapping("traer")
+    public List<Proyecto> obProyectos(){
+        return iProyecto.findAllProyecto();
     }
     
     @PostMapping("crear")

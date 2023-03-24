@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Educacion;
 import com.portfolio.ArgPro.repository.REducacion;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,11 @@ public class SEducacion implements ISEducacion{
     @Override
     public void deleteEducacion(long id) {
         reducacion.deleteById(id);
+    }
+
+    @Override
+    public List<Educacion> findAllEducacion() {
+        return reducacion.findAll();
     }
     
 }

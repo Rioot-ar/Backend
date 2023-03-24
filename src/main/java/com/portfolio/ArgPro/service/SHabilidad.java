@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Habilidad;
 import com.portfolio.ArgPro.repository.RHabilidad;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,11 @@ public class SHabilidad implements ISHabilidad{
     @Override
     public void deleteHabilidad(long id) {
         rhabilidad.deleteById(id);
+    }
+
+    @Override
+    public List<Habilidad> findAllHabilidad() {
+        return rhabilidad.findAll();
     }
     
 }

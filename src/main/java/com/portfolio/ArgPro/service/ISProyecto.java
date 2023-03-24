@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Proyecto;
+import java.util.List;
 
 /**
  *
@@ -13,5 +14,6 @@ import com.portfolio.ArgPro.entity.Proyecto;
 public interface ISProyecto {
     public void saveProyecto(Proyecto pro);
     public Proyecto findProyecto(long id);
-    public void deleteProyecto(long id);    
+    public void deleteProyecto(long id);
+    public List<Proyecto> findAllProyecto();    
 }

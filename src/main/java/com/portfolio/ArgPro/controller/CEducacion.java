@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.controller;
 
 import com.portfolio.ArgPro.entity.Educacion;
 import com.portfolio.ArgPro.service.ISEducacion;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,10 @@ public class CEducacion {
     @GetMapping("{id}")
     public Educacion obEducacion(@PathVariable long id){
         return iEducacion.findEducacion(id);
+    }
+    @GetMapping("traer")
+    public List<Educacion> obEducaciones(){
+        return iEducacion.findAllEducacion();
     }
     
     @PostMapping("crear")

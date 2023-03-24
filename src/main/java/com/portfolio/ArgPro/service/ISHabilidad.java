@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Habilidad;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public interface ISHabilidad {
     public void saveHabilidad(Habilidad hab);
     public Habilidad findHabilidad(long id);
     public void deleteHabilidad(long id);
+    public List<Habilidad> findAllHabilidad();
 }

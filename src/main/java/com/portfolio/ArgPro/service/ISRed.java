@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Red;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public interface ISRed {
     public void saveRed(Red red);
     public Red findRed(long id);
     public void deleteRed(long id);
+    public List<Red> findAllRed();
 }

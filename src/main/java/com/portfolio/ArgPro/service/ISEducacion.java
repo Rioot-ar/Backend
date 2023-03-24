@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Educacion;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public interface ISEducacion {
     public void saveEducacion(Educacion edu);
     public Educacion findEducacion(long id);
     public void deleteEducacion(long id);
+    public List<Educacion> findAllEducacion();
 }

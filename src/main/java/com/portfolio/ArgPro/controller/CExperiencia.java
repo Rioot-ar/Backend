@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.controller;
 
 import com.portfolio.ArgPro.entity.Experiencia;
 import com.portfolio.ArgPro.service.ISExperiencia;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,11 @@ public class CExperiencia {
     @GetMapping("{id}")
     public Experiencia obExperiencia(@PathVariable long id){
         return iexperiencia.findExperiencia(id);
+    }
+    
+    @GetMapping("traer")
+    public List<Experiencia> obExperiencias(){
+        return iexperiencia.findAllExperiencia();
     }
     
     @PostMapping("crear")

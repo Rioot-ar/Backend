@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Experiencia;
 import com.portfolio.ArgPro.repository.RExperiencia;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,11 @@ public class SExperiencia implements ISExperiencia {
         rexperiencia.save(exp);
     }
 
+    @Override
+    public List<Experiencia> findAllExperiencia() {
+        return rexperiencia.findAll();
+    }
+    
     @Override
     public Experiencia findExperiencia(long id) {
         return rexperiencia.findById(id).orElse(null);

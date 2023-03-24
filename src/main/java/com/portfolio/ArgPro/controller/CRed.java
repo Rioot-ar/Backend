@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.controller;
 
 import com.portfolio.ArgPro.entity.Red;
 import com.portfolio.ArgPro.service.ISRed;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,6 +33,11 @@ public class CRed {
     @GetMapping("{id}")
     public Red obRed(@PathVariable long id){
         return iRed.findRed(id);
+    }
+    
+    @GetMapping("traer")
+    public List<Red> obRedes(){
+        return iRed.findAllRed();
     }
     
     @PostMapping("crear")

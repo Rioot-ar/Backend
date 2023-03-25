@@ -41,15 +41,16 @@ public class CExperiencia {
     }
     
     @PostMapping("crear")
-    public String crExperiencia(@RequestBody Experiencia exp){
+    public Experiencia crExperiencia(@RequestBody Experiencia exp){
         iexperiencia.saveExperiencia(exp);
-        return "Experiencia Creada";
+        return exp;
     }
     
     @DeleteMapping("borrar/{id}")
-    public String brExperiencia(@PathVariable long id){
+    public Experiencia brExperiencia(@PathVariable long id){
+        Experiencia exp=iexperiencia.findExperiencia(id);
         iexperiencia.deleteExperiencia(id);
-        return "Experiencia Eliminada";
+        return exp;
     }
     
     @PutMapping("editar")

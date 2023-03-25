@@ -41,15 +41,16 @@ public class CHabilidad {
     }
     
     @PostMapping("crear")
-    public String crHabilidad(@RequestBody Habilidad hab){
+    public Habilidad crHabilidad(@RequestBody Habilidad hab){
         iHabilidad.saveHabilidad(hab);
-        return "Habilidad Creada";
+        return hab;
     }
     
     @DeleteMapping("borrar/{id}")
-    public String brHabilidad(@PathVariable long id){
+    public Habilidad brHabilidad(@PathVariable long id){
+        Habilidad hab = iHabilidad.findHabilidad(id);
         iHabilidad.deleteHabilidad(id);
-        return "Habilidad Eliminada";
+        return hab;
     }
     
     @PutMapping("editar")

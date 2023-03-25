@@ -40,15 +40,16 @@ public class CEducacion {
     }
     
     @PostMapping("crear")
-    public String crEducacion(@RequestBody Educacion edu){
+    public Educacion crEducacion(@RequestBody Educacion edu){
         iEducacion.saveEducacion(edu);
-        return "Educacion Creada";
+        return edu;
     }
     
     @DeleteMapping("borrar/{id}")
-    public String brEducacion(@PathVariable long id){
+    public Educacion brEducacion(@PathVariable long id){
+        Educacion edu=iEducacion.findEducacion(id);
         iEducacion.deleteEducacion(id);
-        return "Educacion Eliminada";
+        return edu;
     }
     
     @PutMapping("editar")

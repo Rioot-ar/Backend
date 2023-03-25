@@ -41,15 +41,16 @@ public class CRed {
     }
     
     @PostMapping("crear")
-    public String crRed(@RequestBody Red red){
+    public Red crRed(@RequestBody Red red){
         iRed.saveRed(red);
-        return "Red Creada";
+        return red;
     }
     
     @DeleteMapping("borrar/{id}")
-    public String brRed(@PathVariable long id){
+    public Red brRed(@PathVariable long id){
+        Red red = iRed.findRed(id);
         iRed.deleteRed(id);
-        return "Red Eliminada";
+        return red;
     }
     
     @PutMapping("editar")

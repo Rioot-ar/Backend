@@ -41,15 +41,16 @@ public class CProyecto {
     }
     
     @PostMapping("crear")
-    public String crProyecto(@RequestBody Proyecto pro){
+    public Proyecto crProyecto(@RequestBody Proyecto pro){
         iProyecto.saveProyecto(pro);
-        return "Proyecto Creada";
+        return pro;
     }
     
     @DeleteMapping("borrar/{id}")
-    public String brProyecto(@PathVariable long id){
+    public Proyecto brProyecto(@PathVariable long id){
+        Proyecto pro = iProyecto.findProyecto(id);
         iProyecto.deleteProyecto(id);
-        return "Proyecto Eliminada";
+        return pro;
     }
     
     @PutMapping("editar")

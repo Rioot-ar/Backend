@@ -6,6 +6,7 @@ package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Persona;
 import com.portfolio.ArgPro.repository.RPersona;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,11 @@ public class SPersona implements ISPersona{
     @Override
     public void deletePersona(long id) {
      rpersona.deleteById(id);
+    }
+
+    @Override
+    public List<Persona> findAllPersona() {
+        return rpersona.findAll();
     }
     
     

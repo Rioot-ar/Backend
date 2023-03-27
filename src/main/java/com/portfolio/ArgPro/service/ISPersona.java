@@ -5,6 +5,7 @@
 package com.portfolio.ArgPro.service;
 
 import com.portfolio.ArgPro.entity.Persona;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,5 @@ public interface ISPersona {
     public void savePersona(Persona per);
     public Persona findPersona(long id);
     public void deletePersona(long id);
+    public List<Persona> findAllPersona();
 }

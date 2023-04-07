@@ -15,6 +15,7 @@
                 <exec.appArgs></exec.appArgs>
                 <exec.mainClass>com.portfolio.ArgPro.ArgProApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
+                <Env.JWT_SECRET>456sa4dq8sddasdas454665a54asda4s</Env.JWT_SECRET>
             </properties>
         </action>
         <action>

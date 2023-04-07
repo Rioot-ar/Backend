@@ -23,7 +23,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
  * @author aquil
  */
 public class TokenUtils {
-    private final static String ACCESS_TOKEN_SECRET = "456sa4dq8sddasdas454665a54asda4s";
+    private final static String ACCESS_TOKEN_SECRET = System.getenv("JWT_SECRET");
     private final static Long ACCESS_TOKEN_VALIDITY_SECONDS = 2592000L;
     
     public static String createToken(String nombre,String email){
@@ -31,7 +31,6 @@ public class TokenUtils {
         Date expirationDate = new Date(System.currentTimeMillis() + expirationTime);
         
         Map<String,Object> extra =new HashMap<>();
-        
         extra.put("nombre",nombre);
         
         return Jwts.builder()
